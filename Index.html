@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زیبا پوشاک - ریڈی میڈ کپڑوں کا بہترین اسٹور</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Urdu/Arabic styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', 'Noto Naskh Arabic', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-emerald-600 flex items-center gap-2">
+                <i class="fa-solid fa-shirt"></i>
+                <span>زیبا پوشاک</span>
+            </a>
+            <nav class="hidden md:flex space-x-reverse space-x-6 text-lg">
+                <a href="#" class="hover:text-emerald-600 transition">ہوم</a>
+                <a href="#shop" class="hover:text-emerald-600 transition">مجموعہ (کپڑے)</a>
+                <a href="#about" class="hover:text-emerald-600 transition">ہمارے بارے میں</a>
+                <a href="#contact" class="hover:text-emerald-600 transition">رابطہ کریں</a>
+            </nav>
+            <div class="relative">
+                <button onclick="toggleCart()" class="bg-emerald-600 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-emerald-700 transition">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count" class="bg-white text-emerald-600 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-emerald-50 to-teal-100 py-16 md:py-24">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 text-center md:text-right">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">جدید اور خوبصورت ریڈی میڈ کپڑے</h1>
+                <p class="text-lg text-gray-600">جدید تراش خراش اور بہترین کپڑے سے تیار کردہ ملبوسات جو آپ کی شخصیت کو چار چاند لگا دیں۔ اب گھر بیٹھے آرڈر کریں۔</p>
+                <div>
+                    <a href="#shop" class="bg-emerald-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-emerald-700 transition inline-block">ابھی خریداری کریں</a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <!-- Placeholder Image representing modern apparel -->
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Ready Made Clothes" class="rounded-2xl shadow-2xl max-w-full h-auto object-cover max-h-[400px]">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="shop" class="py-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">ہمارے نئے ڈیزائن</h2>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80" alt="Kurti" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">ملٹی کلر لان کرتی</h3>
+                    <p class="text-emerald-600 font-semibold">2,499 روپے</p>
+                    <button onclick="addToCart('ملٹی کلر لان کرتی', 2499)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">مردانہ کاٹن شلوار قمیض</h3>
+                    <p class="text-emerald-600 font-semibold">3,800 روپے</p>
+                    <button onclick="addToCart('مردانہ کاٹن شلوار قمیض', 3800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="Casual Wear" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">ڈیزائنر تھری پیس سوٹ</h3>
+                    <p class="text-emerald-600 font-semibold">4,500 روپے</p>
+                    <button onclick="addToCart('ڈیزائنر تھری پیس سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="Western Top" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">جدید ڈیزائنر ٹاپ (Western Style)</h3>
+                    <p class="text-emerald-600 font-semibold">1,999 روپے</p>
+                    <button onclick="addToCart('جدید ڈیزائنر ٹاپ (Western Style)', 1999)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Drawer (Modal) -->
+    <div id="cart-drawer" class="fixed inset-y-0 left-0 max-w-full flex pl-10 z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="w-screen max-w-md bg-white shadow-xl flex flex-col">
+            <div class="p-6 bg-emerald-600 text-white flex justify-between items-center">
+                <h3 class="text-lg font-bold">آپ کا کارٹ</h3>
+                <button onclick="toggleCart()" class="text-white hover:text-gray-200">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                <p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>
+            </div>
+            <div class="p-6 border-t border-gray-200 space-y-4 bg-gray-50">
+                <div class="flex justify-between font-bold text-lg">
+                    <span>کل رقم:</span>
+                    <span id="cart-total">0 روپے</span>
+                </div>
+                <button onclick="checkout()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 transition">آرڈر مکمل کریں</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4 max-w-3xl text-center space-y-6">
+            <h2 class="text-3xl font-bold">ہمارے بارے میں</h2>
+            <p class="text-gray-600 leading-relaxed text-lg">
+                زیبا پوشاک پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white">زیبا پوشاک</h3>
+                <p>ریڈی میڈ کپڑوں کا بہترین آن لائن مرکز۔ ہم ملک بھر میں ڈیلیوری فراہم کرتے ہیں۔</p>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold text-white">رابطہ کی تفصیلات</h3>
+                <p><i class="fa-solid fa-phone ml-2"></i> 0300-1234567</p>
+                <p><i class="fa-solid fa-envelope ml-2"></i> info@zebaposhaak.com</p>
+                <p><i class="fa-solid fa-location-dot ml-2"></i> لاہور، پاکستان</p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white">خبرنامہ</h3>
+                <p>نئے ڈیزائن اور ڈسکاؤنٹ کی معلومات کے لیے سبسکرائب کریں۔</p>
+                <div class="flex">
+                    <input type="email" placeholder="ای میل لکھیں" class="p-2 rounded-r-lg w-full text-gray-800 focus:outline-none">
+                    <button class="bg-emerald-600 text-white px-4 rounded-l-lg hover:bg-emerald-700">شامل ہوں</button>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
+            &copy; 2026 زیبا پوشاک۔ جملہ حقوق محفوظ ہیں۔
+        </div>
+    </footer>
+
+    <!-- Simple E-commerce JS logic -->
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('translate-x-full');
+            // If the layout direction is RTL, we swap translate direction to feel natural
+            if (document.dir === 'rtl') {
+                drawer.classList.toggle('-translate-x-full');
+            }
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+
+            // Total quantity
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartCount.innerText = totalQty;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>';
+                cartTotal.innerText = '0 روپے';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                html += `
+                    <div class="flex justify-between items-center border-b pb-3">
+                        <div>
+                            <h4 class="font-bold text-sm">${item.name}</h4>
+                            <p class="text-xs text-gray-500">${item.price} روپے x ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-semibold text-sm">${itemTotal} روپے</span>
+                            <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-xs font-bold">حذف کریں</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartItemsContainer.innerHTML = html;
+            cartTotal.innerText = total.toLocaleString() + ' روپے';
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('آپ کا کارٹ خالی ہے!');
+                return;
+            }
+            alert('شکریہ! آپ کا آرڈر درج کر لیا گیا ہے۔ (یہ ایک ڈیمو آرڈر ہے)');
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+    </script>
+</body>
+</html>
