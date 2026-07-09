@@ -32,7 +32,7 @@
         let currentSlide = 0;
         const totalSlides = 3;
 
-        // Auto Slider functions
+        // Auto Slider functions (using your custom uploaded photos!)
         function showSlide(index) {
             for (let i = 0; i < totalSlides; i++) {
                 const slide = document.getElementById('slide-' + i);
@@ -182,16 +182,16 @@
         </div>
     </header>
 
-    <!-- Beautiful Auto Image Slider (Sliding Images Section) -->
-    <section class="relative h-[300px] md:h-[500px] bg-gray-900 overflow-hidden shadow-lg">
-        <!-- Slide 1 (Ladies Wear Preview) -->
-        <img id="slide-0" src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=1200&q=80" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
+    <!-- Beautiful Auto Image Slider (Using your custom amazing images) -->
+    <section class="relative h-[300px] md:h-[550px] bg-gray-900 overflow-hidden shadow-lg">
+        <!-- Slide 1 (Your Premium Menswear) -->
+        <img id="slide-0" src="mens-white.jpg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
         
-        <!-- Slide 2 (Mens Fabric Preview) -->
-        <img id="slide-1" src="https://images.unsplash.com/photo-1678125439527-4a004699839e?auto=format&fit=crop&w=1200&q=80" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+        <!-- Slide 2 (Your Green Ladies Suit) -->
+        <img id="slide-1" src="ladies-green.jpg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
         
-        <!-- Slide 3 (Red Dress Designer Suit Preview) -->
-        <img id="slide-2" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1200&q=80" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+        <!-- Slide 3 (Your Peach Ladies Suit) -->
+        <img id="slide-2" src="ladies-peach.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
 
         <!-- Elegant Dark Overlay for text visibility -->
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -199,7 +199,7 @@
         <!-- Slider Content -->
         <div class="absolute inset-0 flex items-center justify-center text-center p-4">
             <div class="max-w-2xl text-white space-y-4">
-                <h1 class="text-3xl md:text-5xl font-bold leading-tight">جدید اور خوبصورت ریڈی میڈ کپڑے</h1>
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight">معاذ کامران ریڈی میڈ ستور</h1>
                 <p class="text-sm md:text-lg">جدید تراش خراش اور بہترین کپڑے سے تیار کردہ ملبوسات جو آپ کی شخصیت کو چار چاند لگا دیں۔ اب گھر بیٹھے آرڈر کریں۔</p>
                 <div>
                     <a href="#shop" class="bg-emerald-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold hover:bg-emerald-700 transition inline-block">مجموعہ دیکھیں</a>
@@ -222,43 +222,43 @@
         
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <!-- Product 1 (Ladies Lavender Kurti) -->
+            <!-- Product 1 (Ladies Green Suit - Your Photo!) -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80" alt="Kurti" class="h-64 w-full object-cover">
+                <img src="ladies-green.jpg" alt="Ladies Green Suit" class="h-64 w-full object-cover">
                 <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">جامنی ڈیزائنر کُرتی</h3>
-                    <p class="text-emerald-600 font-semibold">2,499 روپے</p>
-                    <button onclick="addToCart('جامنی ڈیزائنر کُرتی', 2499)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-
-            <!-- Product 2 (Fixed: Guaranteed Working Mens Blue Shalwar Kameez Model) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1678125439527-4a004699839e?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">مردانہ کاٹن شلوار قمیض</h3>
-                    <p class="text-emerald-600 font-semibold">3,800 روپے</p>
-                    <button onclick="addToCart('مردانہ کاٹن شلوار قمیض', 3800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-
-            <!-- Product 3 (Designer 3-Piece Red Suit) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="Casual Wear" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">ڈیزائنر تھری پیس سرخ سوٹ</h3>
+                    <h3 class="text-lg font-bold">ڈیزائنر تھری پیس سبز سوٹ</h3>
                     <p class="text-emerald-600 font-semibold">4,500 روپے</p>
-                    <button onclick="addToCart('ڈیزائنر تھری پیس سرخ سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                    <button onclick="addToCart('ڈیزائنر تھری پیس سبز سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
                 </div>
             </div>
 
-            <!-- Product 4 (Western Top) -->
+            <!-- Product 2 (Mens White Suit with Waistcoat - Your Photo!) -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="Western Top" class="h-64 w-full object-cover">
+                <img src="mens-white.jpg" alt="Mens White Suit" class="h-64 w-full object-cover">
                 <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">جدید ڈیزائنر ٹاپ (Western Style)</h3>
-                    <p class="text-emerald-600 font-semibold">1,999 روپے</p>
-                    <button onclick="addToCart('جدید ڈیزائنر ٹاپ (Western Style)', 1999)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                    <h3 class="text-lg font-bold">مردانہ روایتی سوٹ مع واسکوٹ</h3>
+                    <p class="text-emerald-600 font-semibold">4,800 روپے</p>
+                    <button onclick="addToCart('مردانہ روایتی سوٹ مع واسکوٹ', 4800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 3 (Ladies Peach Suit - Your Photo!) -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="ladies-peach.jpg" alt="Ladies Peach Suit" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">پریمیم کڑھائی والا آڑو سوٹ</h3>
+                    <p class="text-emerald-600 font-semibold">4,500 روپے</p>
+                    <button onclick="addToCart('پریمیم کڑھائی والا آڑو سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 4 (Mens Grey Shalwar Kameez - Your Photo!) -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="mens-grey.jpg" alt="Mens Grey Kurta" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">مردانہ کاٹن سرمئی شلوار قمیض</h3>
+                    <p class="text-emerald-600 font-semibold">3,800 روپے</p>
+                    <button onclick="addToCart('مردانہ کاٹن سرمئی شلوار قمیض', 3800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
                 </div>
             </div>
         </div>
