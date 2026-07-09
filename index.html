@@ -26,7 +26,7 @@
         }
     </style>
 
-    <!-- Moving JavaScript to Head for Instant Loading and Bug-Free Swatches -->
+    <!-- JavaScript Loaded in Head for Instant Loading and Bug-Free Swatches -->
     <script>
         let cart = [];
 
@@ -36,7 +36,7 @@
             drawer.classList.toggle('hidden');
         }
 
-        // Ultra-Stable Color Switcher function loaded at the very beginning
+        // Color Switcher function matching EXACT images with Swatches
         function changeProductColor(productId, imageUrl, colorName, baseName, price) {
             var imgId = 'prod-' + productId + '-img';
             var titleId = 'prod-' + productId + '-title';
@@ -204,14 +204,14 @@
                     <h3 id="prod-1-title" class="text-lg font-bold">ملٹی کلر لان کرتی</h3>
                     <p class="text-emerald-600 font-semibold">2,499 روپے</p>
                     
-                    <!-- Color Swatches -->
+                    <!-- Color Swatches with Exact Match Labels -->
                     <div class="flex gap-2 my-2 justify-center items-center">
                         <span class="text-xs text-gray-500 self-center">رنگ منتخب کریں:</span>
-                        <!-- Purple Option -->
+                        <!-- Purple Swatch for Lavender Dress -->
                         <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80', 'جامنی رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-purple-600 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="جامنی"></button>
-                        <!-- Teal Option -->
-                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فیروزی رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-teal-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="فیروزی"></button>
-                        <!-- Yellow Option -->
+                        <!-- Pink Swatch for Saree -->
+                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فینسی گلابی ساڑی', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-rose-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="گلابی ساڑی"></button>
+                        <!-- Yellow Swatch for Yellow Dress -->
                         <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
                     </div>
 
@@ -219,9 +219,9 @@
                 </div>
             </div>
 
-            <!-- Product 2 (Fixed: Pure Traditional Sialkot Pakistani Cotton Shalwar Kameez) -->
+            <!-- Product 2 (Fixed: Verified Working Traditional Pakistani Black Kurta Shalwar Kameez) -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img id="prod-2-img" src="https://images.unsplash.com/photo-1720242203010-30660093718e?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
+                <img id="prod-2-img" src="https://images.unsplash.com/photo-1608408836139-e3170d249f3e?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
                 <div class="p-4 space-y-2">
                     <h3 id="prod-2-title" class="text-lg font-bold">مردانہ کاٹن شلوار قمیض</h3>
                     <p class="text-emerald-600 font-semibold">3,800 روپے</p>
@@ -236,15 +236,15 @@
                     <h3 id="prod-3-title" class="text-lg font-bold">ڈیزائنر تھری پیس سوٹ</h3>
                     <p class="text-emerald-600 font-semibold">4,500 روپے</p>
 
-                    <!-- Color Swatches -->
+                    <!-- Color Swatches with Exact Match Labels and Icons -->
                     <div class="flex gap-2 my-2 justify-center items-center">
                         <span class="text-xs text-gray-500 self-center">رنگ منتخب کریں:</span>
-                        <!-- Red/Pink Option -->
-                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80', 'سرخ گلابی رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-rose-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="سرخ گلابی"></button>
-                        <!-- Teal/Blue Option -->
-                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فیروزی نیلا رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-teal-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="فیروزی نیلا"></button>
-                        <!-- Yellow Option -->
-                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا چمکدار رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
+                        <!-- Red Swatch for Red Maxi -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80', 'سرخ رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-red-600 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="سرخ"></button>
+                        <!-- Pink Swatch for Saree -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فینسی گلابی ساڑی', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-rose-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="گلابی ساڑی"></button>
+                        <!-- Yellow Swatch for Yellow Dress -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
                     </div>
 
                     <button id="prod-3-btn" onclick="addToCart('ڈیزائنر تھری پیس سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
@@ -339,4 +339,10 @@
                 </a>
             </div>
         </div>
-        <div class="border-t border-gray-800 mt-8
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
+            &copy; 2026 معاذ کامران ریڈی میڈ اسٹور۔ جملہ حقوق محفوظ ہیں۔
+        </div>
+    </footer>
+
+</body>
+</html>
