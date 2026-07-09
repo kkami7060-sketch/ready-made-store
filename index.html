@@ -1,23 +1,32 @@
-<!DOCTYPE html>
+[6:01 PM, 7/9/2026] Kamran: <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>معاذ کامران ریڈی میڈ ستور - بہترین ریڈی میڈ ملبوسات</title>
-    
     <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Google Fonts as backup -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <!-- Jameel Noori Nastaleeq CDN link -->
+    <link href="https://cdn.jsdelivr.net/npm/jameel-noori@1.1.2/ja…
+[6:02 PM, 7/9/2026] Kamran: <!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معاذ کامران ریڈی میڈ ستور - بہترین ریڈی میڈ ملبوسات</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts as backup -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Jameel Noori Nastaleeq CDN link -->
     <link href="https://cdn.jsdelivr.net/npm/jameel-noori@1.1.2/jameel-noori.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/urdu-fonts@1.5.10/fonts.min.css" rel="stylesheet">
-    
     <style>
         body {
             /* Applying Jameel Noori font with fallback */
@@ -25,18 +34,13 @@
             line-height: 2; /* Increased line height for Nastaleeq script */
         }
     </style>
-
     <!-- JavaScript Loaded in Head for Slider & Cart Stability -->
     <script>
         let cart = [];
+        let currentSlide = 0;
+        const totalSlides = 3;
 
-        // Simplified and completely robust show/hide toggle for cart drawer
-        function toggleCart() {
-            const drawer = document.getElementById('cart-drawer');
-            drawer.classList.toggle('hidden');
-        }
-
-        // Auto Slider functions (using your custom uploaded photos!)
+        // Auto Slider functions
         function showSlide(index) {
             for (let i = 0; i < totalSlides; i++) {
                 const slide = document.getElementById('slide-' + i);
@@ -57,10 +61,12 @@
             showSlide(currentSlide);
         }
 
-        // Start auto slide rotation every 4 seconds
-        setInterval(function() {
-            changeSlide(1);
-        }, 4000);
+        // Initialize features after DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            setInterval(function() {
+                changeSlide(1);
+            }, 4000);
+        });
 
         // Robust show/hide toggle for cart drawer
         function toggleCart() {
@@ -76,8 +82,6 @@
                 cart.push({ name, price, qty: 1 });
             }
             updateCartUI();
-            
-            // Automatically open cart when item is added to provide feedback
             const drawer = document.getElementById('cart-drawer');
             drawer.classList.remove('hidden');
         }
@@ -86,7 +90,6 @@
             const cartItemsContainer = document.getElementById('cart-items');
             const cartCount = document.getElementById('cart-count');
             const cartTotal = document.getElementById('cart-total');
-
             const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
             cartCount.innerText = totalQty;
 
@@ -131,31 +134,24 @@
             }
 
             // WhatsApp Message Formatting
-            let message = `*معاذ کامران ریڈی میڈ ستور*\n`;
-            message += `--------------------------------------\n`;
-            message += `السلام علیکم! میں درج ذیل کپڑوں کا آرڈر دینا چاہتا ہوں:\n\n`;
+            let message = *معاذ کامران ریڈی میڈ ستور*\n;
+            message += --------------------------------------\n;
+            message += السلام علیکم! میں درج ذیل کپڑوں کا آرڈر دینا چاہتا ہوں:\n\n;
             
             let total = 0;
             cart.forEach((item, index) => {
                 const itemTotal = item.price * item.qty;
                 total += itemTotal;
-                message += `*${index + 1}. ${item.name}*\n   قیمت: ${item.price.toLocaleString()} روپے | تعداد: ${item.qty} | کل: ${itemTotal.toLocaleString()} روپے\n\n`;
+                message += *${index + 1}. ${item.name}*\n   قیمت: ${item.price.toLocaleString()} روپے | تعداد: ${item.qty} | کل: ${itemTotal.toLocaleString()} روپے\n\n;
             });
             
-            message += `--------------------------------------\n`;
-            message += `*کل رقم (Grand Total):* ${total.toLocaleString()} روپے\n\n`;
-            message += `مہربانی فرما کر میرا آرڈر کنفرم کریں اور ادائیگی کا طریقہ کار اور ڈیلیوری کی تفصیلات شیئر کریں۔ شکریہ!`;
+            message += --------------------------------------\n;
+            message += *کل رقم (Grand Total):* ${total.toLocaleString()} روپے\n\n;
+            message += مہربانی فرما کر میرا آرڈر کنفرم کریں اور ادائیگی کا طریقہ کار اور ڈیلیوری کی تفصیلات شیئر کریں۔ شکریہ!;
 
-            // Encoding the message to be URL friendly
             const encodedMessage = encodeURIComponent(message);
-            
-            // Sending to WhatsApp API with country code (92 for Pakistan)
-            const whatsappUrl = `https://wa.me/923146408155?text=${encodedMessage}`;
-            
-            // Open in new tab
+            const whatsappUrl = https://wa.me/923146408155?text=${encodedMessage};
             window.open(whatsappUrl, '_blank');
-
-            // Optional: Clear cart after order
             cart = [];
             updateCartUI();
             toggleCart();
@@ -186,18 +182,16 @@
         </div>
     </header>
 
-    <!-- Beautiful Auto Image Slider (Using your custom amazing images) -->
+    <!-- Beautiful Auto Image Slider -->
     <section class="relative h-[300px] md:h-[550px] bg-gray-900 overflow-hidden shadow-lg">
-        <!-- Slide 1 (Your Premium Menswear) -->
+        <!-- Slide 1 -->
         <img id="slide-0" src="mens-white.jpg.jpeg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
-        
-        <!-- Slide 2 (Your Green Ladies Suit) -->
+        <!-- Slide 2 -->
         <img id="slide-1" src="ladies-green.jpg.jpeg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-        
-        <!-- Slide 3 (Your Peach Ladies Suit) -->
+        <!-- Slide 3 -->
         <img id="slide-2" src="ladies-peach.jpg.jpeg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
 
-        <!-- Elegant Dark Overlay for text visibility -->
+        <!-- Elegant Dark Overlay -->
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
 
         <!-- Slider Content -->
@@ -215,4 +209,119 @@
         <button onclick="changeSlide(-1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white w-8 h-10 rounded flex items-center justify-center z-10 transition">
             <i class="fa-solid fa-chevron-right text-lg"></i>
         </button>
-        <button onclick="changeSlide(1)" class="absolute left-4 top-1/2
+        <button onclick="changeSlide(1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white w-8 h-10 rounded flex items-center justify-center z-10 transition">
+            <i class="fa-solid fa-chevron-left text-lg"></i>
+        </button>
+    </section>
+
+    <!-- Product Section -->
+    <section id="shop" class="py-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">ہمارے نئے ڈیزائن</h2>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="ladies-green.jpg.jpeg" alt="Ladies Green Suit" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">ڈیزائنر تھری پیس سبز سوٹ</h3>
+                    <p class="text-emerald-600 font-semibold">4,500 روپے</p>
+                    <button onclick="addToCart('ڈیزائنر تھری پیس سبز سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="mens-white.jpg.jpeg" alt="Mens White Suit" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">مردانہ روایتی سوٹ مع واسکوٹ</h3>
+                    <p class="text-emerald-600 font-semibold">4,800 روپے</p>
+                    <button onclick="addToCart('مردانہ روایتی سوٹ مع واسکوٹ', 4800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="ladies-peach.jpg.jpeg" alt="Ladies Peach Suit" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">پریمیم کڑھائی والا آڑو سوٹ</h3>
+                    <p class="text-emerald-600 font-semibold">4,500 روپے</p>
+                    <button onclick="addToCart('پریمیم کڑھائی والا آڑو سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="mens-grey.jpg.jpeg" alt="Mens Grey Kurta" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">مردانہ کاٹن سرمئی شلوار قمیض</h3>
+                    <p class="text-emerald-600 font-semibold">3,800 روپے</p>
+                    <button onclick="addToCart('مردانہ کاٹن سرمئی شلوار قمیض', 3800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed/Robust Cart Drawer with Backdrop Overlay -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <div onclick="toggleCart()" class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+        <div class="absolute inset-y-0 left-0 max-w-full flex">
+            <div class="w-screen max-w-md bg-white h-full shadow-xl flex flex-col relative z-10">
+                <div class="p-6 bg-emerald-600 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold">آپ کا کارٹ</h3>
+                    <button onclick="toggleCart()" class="text-white hover:text-gray-200">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>
+                </div>
+                <div class="p-6 border-t border-gray-200 space-y-4 bg-gray-50">
+                    <div class="flex justify-between font-bold text-lg">
+                        <span>کل رقم:</span>
+                        <span id="cart-total">0 روپے</span>
+                    </div>
+                    <button onclick="checkout()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 transition">آرڈر مکمل کریں</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4 max-w-3xl text-center space-y-6">
+            <h2 class="text-3xl font-bold">ہمارے بارے میں</h2>
+            <p class="text-gray-600 leading-relaxed text-lg">
+                معاذ کامران ریڈی میڈ ستور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white">معاذ کامران ریڈی میڈ اسٹور</h3>
+                <p>ریڈی میڈ کپڑوں کا بہترین آن لائن مرکز۔ ہم ملک بھر میں ڈیلیوری فراہم کرتے ہیں۔</p>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold text-white">رابطہ کی تفصیلات</h3>
+                <p><i class="fa-solid fa-phone ml-2"></i> 0314-6408155</p>
+                <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white">واٹس ایپ رابطہ</h3>
+                <p>کسی بھی معلومات یا براہِ راست آرڈر کے لیے ہم سے واٹس ایپ پر رابطہ کریں۔</p>
+                <a href="https://wa.me/923146408155" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-2.5 rounded-lg hover:bg-emerald-700 transition font-bold mt-2">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>واٹس ایپ پر چیٹ کریں</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
+            &copy; 2026 معاذ کامران ریڈی میڈ اسٹور۔ جملہ حقوق محفوظ ہیں۔
+        </div>
+    </footer>
+
+</body>
+</html>
