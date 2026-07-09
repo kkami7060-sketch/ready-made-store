@@ -66,19 +66,32 @@
         <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">ہمارے نئے ڈیزائن</h2>
         
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
+            
+            <!-- Product 1 (Ladies Kurti with Multi-color options) -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80" alt="Kurti" class="h-64 w-full object-cover">
+                <img id="prod-1-img" src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80" alt="Kurti" class="h-64 w-full object-cover">
                 <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">ملٹی کلر لان کرتی</h3>
+                    <h3 id="prod-1-title" class="text-lg font-bold">ملٹی کلر لان کرتی</h3>
                     <p class="text-emerald-600 font-semibold">2,499 روپے</p>
-                    <button onclick="addToCart('ملٹی کلر لان کرتی', 2499)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                    
+                    <!-- Color Swatches -->
+                    <div class="flex gap-2 my-2 justify-center items-center">
+                        <span class="text-xs text-gray-500 self-center">رنگ منتخب کریں:</span>
+                        <!-- Purple Option -->
+                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80', 'جامنی رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-purple-600 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="جامنی"></button>
+                        <!-- Teal Option -->
+                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فیروزی رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-teal-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="فیروزی"></button>
+                        <!-- Yellow Option -->
+                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
+                    </div>
+
+                    <button id="prod-1-btn" onclick="addToCart('ملٹی کلر لان کرتی', 2499)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            <!-- Product 2 (Mens Shalwar Kameez) -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
                 <div class="p-4 space-y-2">
                     <h3 class="text-lg font-bold">مردانہ کاٹن شلوار قمیض</h3>
                     <p class="text-emerald-600 font-semibold">3,800 روپے</p>
@@ -86,13 +99,25 @@
                 </div>
             </div>
 
-            <!-- Product 3 -->
+            <!-- Product 3 (Designer 3-Piece Suit with Multi-color options) -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="Casual Wear" class="h-64 w-full object-cover">
+                <img id="prod-3-img" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="Casual Wear" class="h-64 w-full object-cover">
                 <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">ڈیزائنر تھری پیس سوٹ</h3>
+                    <h3 id="prod-3-title" class="text-lg font-bold">ڈیزائنر تھری پیس سوٹ</h3>
                     <p class="text-emerald-600 font-semibold">4,500 روپے</p>
-                    <button onclick="addToCart('ڈیزائنر تھری پیس سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+
+                    <!-- Color Swatches -->
+                    <div class="flex gap-2 my-2 justify-center items-center">
+                        <span class="text-xs text-gray-500 self-center">رنگ منتخب کریں:</span>
+                        <!-- Red/Pink Option -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80', 'سرخ گلابی رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-rose-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="سرخ گلابی"></button>
+                        <!-- Teal/Blue Option -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فیروزی نیلا رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-teal-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="فیروزی نیلا"></button>
+                        <!-- Yellow Option -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا چمکدار رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
+                    </div>
+
+                    <button id="prod-3-btn" onclick="addToCart('ڈیزائنر تھری پیس سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
                 </div>
             </div>
 
@@ -104,6 +129,18 @@
                     <p class="text-emerald-600 font-semibold">1,999 روپے</p>
                     <button onclick="addToCart('جدید ڈیزائنر ٹاپ (Western Style)', 1999)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center space-y-6">
+            <h2 class="text-3xl font-bold">ہمارے اسٹور کا ویڈیو تعارف</h2>
+            <p class="text-gray-600">ہمارے شاندار ملبوسات کی کوالٹی اور نئے فیشن ڈیزائنز کو دیکھنے کے لیے یہ ویڈیو پلے کریں۔</p>
+            <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl relative">
+                <!-- YouTube Video Embed (Replace 'tgbNymZ7vqY' with your own YouTube video ID) -->
+                <iframe class="w-full h-[250px] md:h-[450px]" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -160,125 +197,3 @@
                 <h3 class="text-xl font-bold text-white">رابطہ کی تفصیلات</h3>
                 <p><i class="fa-solid fa-phone ml-2"></i> 0314-6408155</p>
                 <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
-            </div>
-            <!-- WhatsApp Contact Option in Footer -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white">واٹس ایپ رابطہ</h3>
-                <p>کسی بھی معلومات یا براہِ راست آرڈر کے لیے ہم سے واٹس ایپ پر رابطہ کریں۔</p>
-                <a href="https://wa.me/923146408155" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-2.5 rounded-lg hover:bg-emerald-700 transition font-bold mt-2">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    <span>واٹس ایپ پر چیٹ کریں</span>
-                </a>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
-            &copy; 2026 معاذ کامران ریڈی میڈ سٹور۔ جملہ حقوق محفوظ ہیں۔
-        </div>
-    </footer>
-
-    <!-- Simple E-commerce JS logic with WhatsApp Integration -->
-    <script>
-        let cart = [];
-
-        // Simplified and completely robust show/hide toggle for cart drawer
-        function toggleCart() {
-            const drawer = document.getElementById('cart-drawer');
-            drawer.classList.toggle('hidden');
-        }
-
-        function addToCart(name, price) {
-            const existingItem = cart.find(item => item.name === name);
-            if (existingItem) {
-                existingItem.qty += 1;
-            } else {
-                cart.push({ name, price, qty: 1 });
-            }
-            updateCartUI();
-            
-            // Automatically open cart when item is added to provide feedback
-            const drawer = document.getElementById('cart-drawer');
-            drawer.classList.remove('hidden');
-        }
-
-        function updateCartUI() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartCount = document.getElementById('cart-count');
-            const cartTotal = document.getElementById('cart-total');
-
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            cartCount.innerText = totalQty;
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>';
-                cartTotal.innerText = '0 روپے';
-                return;
-            }
-
-            let html = '';
-            let total = 0;
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.qty;
-                total += itemTotal;
-                html += `
-                    <div class="flex justify-between items-center border-b pb-3">
-                        <div>
-                            <h4 class="font-bold text-sm">${item.name}</h4>
-                            <p class="text-xs text-gray-500">${item.price.toLocaleString()} روپے x ${item.qty}</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-semibold text-sm">${itemTotal.toLocaleString()} روپے</span>
-                            <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-xs font-bold">حذف کریں</button>
-                        </div>
-                    </div>
-                `;
-            });
-
-            cartItemsContainer.innerHTML = html;
-            cartTotal.innerText = total.toLocaleString() + ' روپے';
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function checkout() {
-            if (cart.length === 0) {
-                alert('آپ کا کارٹ خالی ہے!');
-                return;
-            }
-
-            // WhatsApp Message Formatting
-            let message = `*معاذ کامران ریڈی میڈ سٹور*\n`;
-            message += `--------------------------------------\n`;
-            message += `السلام علیکم! میں درج ذیل کپڑوں کا آرڈر دینا چاہتا ہوں:\n\n`;
-            
-            let total = 0;
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.qty;
-                total += itemTotal;
-                message += `*${index + 1}. ${item.name}*\n   قیمت: ${item.price.toLocaleString()} روپے | تعداد: ${item.qty} | کل: ${itemTotal.toLocaleString()} روپے\n\n`;
-            });
-            
-            message += `--------------------------------------\n`;
-            message += `*کل رقم (Grand Total):* ${total.toLocaleString()} روپے\n\n`;
-            message += `مہربانی فرما کر میرا آرڈر کنفرم کریں اور ادائیگی کا طریقہ کار اور ڈیلیوری کی تفصیلات شیئر کریں۔ شکریہ!`;
-
-            // Encoding the message to be URL friendly
-            const encodedMessage = encodeURIComponent(message);
-            
-            // Sending to WhatsApp API with country code (92 for Pakistan)
-            const whatsappUrl = `https://wa.me/923146408155?text=${encodedMessage}`;
-            
-            // Open in new tab
-            window.open(whatsappUrl, '_blank');
-
-            // Optional: Clear cart after order
-            cart = [];
-            updateCartUI();
-            toggleCart();
-        }
-    </script>
-</body>
-</html>
