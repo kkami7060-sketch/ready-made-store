@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معاذ کامران ریڈی میڈ اسٹور- بہترین ریڈی میڈ ملبوسات</title>
+    <title>معاذ کامران ریڈی میڈ اسٹور - بہترین ریڈی میڈ ملبوسات</title>
+    
     <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Google Fonts as backup -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <!-- Jameel Noori Nastaleeq CDN link -->
     <link href="https://cdn.jsdelivr.net/npm/jameel-noori@1.1.2/jameel-noori.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/urdu-fonts@1.5.10/fonts.min.css" rel="stylesheet">
+    
     <style>
         body {
-            /* Applying Jameel Noori font with fallback */
+            /* Applying Jameel Noori font with fallback --> You can change Jameel-Noori to any other font if desired */
             font-family: 'Jameel-Noori', 'Jameel-Noori.N', 'Noto Nastaliq Urdu', 'Tajawal', sans-serif;
-            line-height: 2; /* Increased line height for Nastaleeq script */
+            line-height: 2; 
         }
     </style>
-    <!-- JavaScript Loaded in Head for Slider & Cart Stability -->
+
+    <!-- JavaScript for Slider & Cart Control -->
     <script>
         let cart = [];
         let currentSlide = 0;
@@ -47,7 +53,7 @@
             showSlide(currentSlide);
         }
 
-        // Initialize features after DOM is fully loaded
+        // Initialize features after page load
         document.addEventListener('DOMContentLoaded', function() {
             setInterval(function() {
                 changeSlide(1);
@@ -72,6 +78,7 @@
             drawer.classList.remove('hidden');
         }
 
+        // Updating shopping cart view
         function updateCartUI() {
             const cartItemsContainer = document.getElementById('cart-items');
             const cartCount = document.getElementById('cart-count');
@@ -120,7 +127,7 @@
             }
 
             // WhatsApp Message Formatting
-            let message = *معاذ کامران ریڈی میڈ ستور*\n;
+            let message = *معاذ کامران ریڈی میڈ اسٹور*\n;
             message += --------------------------------------\n;
             message += السلام علیکم! میں درج ذیل کپڑوں کا آرڈر دینا چاہتا ہوں:\n\n;
             
@@ -168,7 +175,7 @@
         </div>
     </header>
 
-    <!-- Beautiful Auto Image Slider -->
+    <!-- Beautiful Auto Image Slider (Using your custom uploaded photos!) -->
     <section class="relative h-[300px] md:h-[550px] bg-gray-900 overflow-hidden shadow-lg">
         <!-- Slide 1 -->
         <img id="slide-0" src="mens-white.jpg.jpeg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
@@ -183,10 +190,10 @@
         <!-- Slider Content -->
         <div class="absolute inset-0 flex items-center justify-center text-center p-4">
             <div class="max-w-2xl text-white space-y-4">
-                <h1 class="text-3xl md:text-5xl font-bold leading-tight">معاذ کامران ریڈی میڈ ستور</h1>
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight">معاذ کامران ریڈی میڈ اسٹور</h1>
                 <p class="text-sm md:text-lg">جدید ڈیزائن اور بہترین کوالٹی کے کپڑے سے تیار کردہ ملبوسات جو آپ کی شخصیت کو چار چاند لگا دیں۔ اب گھر بیٹھے آرڈر کریں۔</p>
                 <div>
-                    <a href="#shop" class="bg-emerald-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold hover:bg-emerald-700 transition inline-block">مجموعہ دیکھیں</a>
+                    <a href="#shop" class="bg-emerald-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold hover:bg-emerald-700 transition inline-block">کولیکشن دیکھیں</a>
                 </div>
             </div>
         </div>
@@ -277,7 +284,7 @@
         <div class="container mx-auto px-4 max-w-3xl text-center space-y-6">
             <h2 class="text-3xl font-bold">ہمارے بارے میں</h2>
             <p class="text-gray-600 leading-relaxed text-lg">
-                معاذ کامران ریڈی میڈ ستور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
+                معاذ کامران ریڈی میڈ اسٹور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
             </p>
         </div>
     </section>
@@ -295,6 +302,7 @@
                 <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
                 <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
             </div>
+            <!-- WhatsApp Contact Option in Footer -->
             <div class="space-y-4">
                 <h3 class="text-xl font-bold text-white">واٹس ایپ رابطہ</h3>
                 <p>کسی بھی معلومات یا براہِ راست آرڈر کے لیے ہم سے واٹس ایپ پر رابطہ کریں۔</p>
