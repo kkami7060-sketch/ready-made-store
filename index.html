@@ -89,9 +89,9 @@
                 </div>
             </div>
 
-            <!-- Product 2 (Mens Shalwar Kameez) -->
+            <!-- Product 2 (Fixed: Replaced Pant-Coat with Traditional Kurta / Shalwar Kameez) -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
+                <img src="https://images.unsplash.com/photo-1621243804936-775306a8f2e3?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
                 <div class="p-4 space-y-2">
                     <h3 class="text-lg font-bold">مردانہ کاٹن شلوار قمیض</h3>
                     <p class="text-emerald-600 font-semibold">3,800 روپے</p>
@@ -181,7 +181,7 @@
         <div class="container mx-auto px-4 max-w-3xl text-center space-y-6">
             <h2 class="text-3xl font-bold">ہمارے بارے میں</h2>
             <p class="text-gray-600 leading-relaxed text-lg">
-                معاذ کامران ریڈی میڈ سٹور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
+                معاذ کامران ریڈی میڈ ستور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
             </p>
         </div>
     </section>
@@ -197,3 +197,141 @@
                 <h3 class="text-xl font-bold text-white">رابطہ کی تفصیلات</h3>
                 <p><i class="fa-solid fa-phone ml-2"></i> 0314-6408155</p>
                 <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
+            </div>
+            <!-- WhatsApp Contact Option in Footer -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white">واٹس ایپ رابطہ</h3>
+                <p>کسی بھی معلومات یا براہِ راست آرڈر کے لیے ہم سے واٹس ایپ پر رابطہ کریں۔</p>
+                <a href="https://wa.me/923146408155" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-2.5 rounded-lg hover:bg-emerald-700 transition font-bold mt-2">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>واٹس ایپ پر چیٹ کریں</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
+            &copy; 2026 معاذ کامران ریڈی میڈ سٹور۔ جملہ حقوق محفوظ ہیں۔
+        </div>
+    </footer>
+
+    <!-- Simple E-commerce JS logic with WhatsApp Integration -->
+    <script>
+        let cart = [];
+
+        // Simplified and completely robust show/hide toggle for cart drawer
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        // New Ultra-Stable Color Switcher function using classic concatenation
+        function changeProductColor(productId, imageUrl, colorName, baseName, price) {
+            var imgId = 'prod-' + productId + '-img';
+            var titleId = 'prod-' + productId + '-title';
+            var btnId = 'prod-' + productId + '-btn';
+
+            var imgElement = document.getElementById(imgId);
+            var titleElement = document.getElementById(titleId);
+            var btnElement = document.getElementById(btnId);
+
+            if (imgElement) {
+                imgElement.src = imageUrl;
+            }
+            if (titleElement) {
+                titleElement.innerText = baseName + ' (' + colorName + ')';
+            }
+            if (btnElement) {
+                btnElement.setAttribute('onclick', "addToCart('" + baseName + " (" + colorName + ")', " + price + ")");
+            }
+        }
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCartUI();
+            
+            // Automatically open cart when item is added to provide feedback
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.remove('hidden');
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartCount.innerText = totalQty;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>';
+                cartTotal.innerText = '0 روپے';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                html += `
+                    <div class="flex justify-between items-center border-b pb-3">
+                        <div>
+                            <h4 class="font-bold text-sm">${item.name}</h4>
+                            <p class="text-xs text-gray-500">${item.price.toLocaleString()} روپے x ${item.qty}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-semibold text-sm">${itemTotal.toLocaleString()} روپے</span>
+                            <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-xs font-bold">حذف کریں</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartItemsContainer.innerHTML = html;
+            cartTotal.innerText = total.toLocaleString() + ' روپے';
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('آپ کا کارٹ خالی ہے!');
+                return;
+            }
+
+            // WhatsApp Message Formatting
+            let message = `*معاذ کامران ریڈی میڈ سٹور*\n`;
+            message += `--------------------------------------\n`;
+            message += `السلام علیکم! میں درج ذیل کپڑوں کا آرڈر دینا چاہتا ہوں:\n\n`;
+            
+            let total = 0;
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                message += `*${index + 1}. ${item.name}*\n   قیمت: ${item.price.toLocaleString()} روپے | تعداد: ${item.qty} | کل: ${itemTotal.toLocaleString()} روپے\n\n`;
+            });
+            
+            message += `--------------------------------------\n`;
+            message += `*کل رقم (Grand Total):* ${total.toLocaleString()} روپے\n\n`;
+            message += `مہربانی فرما کر میرا آرڈر کنفرم کریں اور ادائیگی کا طریقہ کار اور ڈیلیوری کی تفصیلات شیئر کریں۔ شکریہ!`;
+
+            // Encoding the message to be URL friendly
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Sending to WhatsApp API with country code (92 for Pakistan)
+            const whatsappUrl = `https://wa.me/923146408155?text=${encodedMessage}`;
+            
+            // Open in new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Optional: Clear cart after order
+            cart = [];
+            updateCartUI();
