@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>معاذ کامران ریڈی میڈ سٹور - بہترین ریڈی میڈ ملبوسات</title>
+    
     <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Google Fonts as backup -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <!-- Jameel Noori Nastaleeq CDN link -->
     <link href="https://cdn.jsdelivr.net/npm/jameel-noori@1.1.2/jameel-noori.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/urdu-fonts@1.5.10/fonts.min.css" rel="stylesheet">
+    
     <style>
         body {
             /* Applying Jameel Noori font with fallback */
@@ -20,201 +25,8 @@
             line-height: 2; /* Increased line height for Nastaleeq script */
         }
     </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
 
-    <!-- Header / Navigation -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-emerald-600 flex items-center gap-2">
-                <i class="fa-solid fa-shirt"></i>
-                <span>معاذ کامران ریڈی میڈ سٹور</span>
-            </a>
-            <nav class="hidden md:flex space-x-reverse space-x-6 text-lg">
-                <a href="#" class="hover:text-emerald-600 transition">ہوم</a>
-                <a href="#shop" class="hover:text-emerald-600 transition">مجموعہ (کپڑے)</a>
-                <a href="#about" class="hover:text-emerald-600 transition">ہمارے بارے میں</a>
-                <a href="#contact" class="hover:text-emerald-600 transition">رابطہ کریں</a>
-            </nav>
-            <div class="relative">
-                <button onclick="toggleCart()" class="bg-emerald-600 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-emerald-700 transition">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span id="cart-count" class="bg-white text-emerald-600 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-emerald-50 to-teal-100 py-16 md:py-24">
-        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6 text-center md:text-right">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">جدید اور خوبصورت ریڈی میڈ کپڑے</h1>
-                <p class="text-lg text-gray-600">جدید تراش خراش اور بہترین کپڑے سے تیار کردہ ملبوسات جو آپ کی شخصیت کو چار چاند لگا دیں۔ اب گھر بیٹھے آرڈر کریں۔</p>
-                <div>
-                    <a href="#shop" class="bg-emerald-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-emerald-700 transition inline-block">ابھی خریداری کریں</a>
-                </div>
-            </div>
-            <div class="flex justify-center">
-                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Ready Made Clothes" class="rounded-2xl shadow-2xl max-w-full h-auto object-cover max-h-[400px]">
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Section -->
-    <section id="shop" class="py-16 container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">ہمارے نئے ڈیزائن</h2>
-        
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <!-- Product 1 (Ladies Kurti with Multi-color options) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img id="prod-1-img" src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80" alt="Kurti" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 id="prod-1-title" class="text-lg font-bold">ملٹی کلر لان کرتی</h3>
-                    <p class="text-emerald-600 font-semibold">2,499 روپے</p>
-                    
-                    <!-- Color Swatches -->
-                    <div class="flex gap-2 my-2 justify-center items-center">
-                        <span class="text-xs text-gray-500 self-center">رنگ منتخب کریں:</span>
-                        <!-- Purple Option -->
-                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80', 'جامنی رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-purple-600 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="جامنی"></button>
-                        <!-- Teal Option -->
-                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فیروزی رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-teal-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="فیروزی"></button>
-                        <!-- Yellow Option -->
-                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
-                    </div>
-
-                    <button id="prod-1-btn" onclick="addToCart('ملٹی کلر لان کرتی', 2499)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-
-            <!-- Product 2 (Fixed: Replaced Pant-Coat with Traditional Kurta / Shalwar Kameez) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1621243804936-775306a8f2e3?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">مردانہ کاٹن شلوار قمیض</h3>
-                    <p class="text-emerald-600 font-semibold">3,800 روپے</p>
-                    <button onclick="addToCart('مردانہ کاٹن شلوار قمیض', 3800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-
-            <!-- Product 3 (Designer 3-Piece Suit with Multi-color options) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img id="prod-3-img" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="Casual Wear" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 id="prod-3-title" class="text-lg font-bold">ڈیزائنر تھری پیس سوٹ</h3>
-                    <p class="text-emerald-600 font-semibold">4,500 روپے</p>
-
-                    <!-- Color Swatches -->
-                    <div class="flex gap-2 my-2 justify-center items-center">
-                        <span class="text-xs text-gray-500 self-center">رنگ منتخب کریں:</span>
-                        <!-- Red/Pink Option -->
-                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80', 'سرخ گلابی رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-rose-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="سرخ گلابی"></button>
-                        <!-- Teal/Blue Option -->
-                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فیروزی نیلا رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-teal-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="فیروزی نیلا"></button>
-                        <!-- Yellow Option -->
-                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا چمکدار رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
-                    </div>
-
-                    <button id="prod-3-btn" onclick="addToCart('ڈیزائنر تھری پیس سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="Western Top" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">جدید ڈیزائنر ٹاپ (Western Style)</h3>
-                    <p class="text-emerald-600 font-semibold">1,999 روپے</p>
-                    <button onclick="addToCart('جدید ڈیزائنر ٹاپ (Western Style)', 1999)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Introduction Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 max-w-4xl text-center space-y-6">
-            <h2 class="text-3xl font-bold">ہمارے اسٹور کا ویڈیو تعارف</h2>
-            <p class="text-gray-600">ہمارے شاندار ملبوسات کی کوالٹی اور نئے فیشن ڈیزائنز کو دیکھنے کے لیے یہ ویڈیو پلے کریں۔</p>
-            <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl relative">
-                <!-- YouTube Video Embed (Replace 'tgbNymZ7vqY' with your own YouTube video ID) -->
-                <iframe class="w-full h-[250px] md:h-[450px]" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fixed/Robust Cart Drawer with Backdrop Overlay -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
-        <!-- Dark Backdrop: Clicking it will close the cart -->
-        <div onclick="toggleCart()" class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
-        
-        <!-- Drawer Panel -->
-        <div class="absolute inset-y-0 left-0 max-w-full flex">
-            <div class="w-screen max-w-md bg-white h-full shadow-xl flex flex-col relative z-10">
-                <div class="p-6 bg-emerald-600 text-white flex justify-between items-center">
-                    <h3 class="text-lg font-bold">آپ کا کارٹ</h3>
-                    <button onclick="toggleCart()" class="text-white hover:text-gray-200">
-                        <i class="fa-solid fa-xmark text-2xl"></i>
-                    </button>
-                </div>
-                
-                <!-- Dynamic Cart Items Container -->
-                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
-                    <p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>
-                </div>
-                
-                <div class="p-6 border-t border-gray-200 space-y-4 bg-gray-50">
-                    <div class="flex justify-between font-bold text-lg">
-                        <span>کل رقم:</span>
-                        <span id="cart-total">0 روپے</span>
-                    </div>
-                    <button onclick="checkout()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 transition">آرڈر مکمل کریں</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="bg-gray-100 py-16">
-        <div class="container mx-auto px-4 max-w-3xl text-center space-y-6">
-            <h2 class="text-3xl font-bold">ہمارے بارے میں</h2>
-            <p class="text-gray-600 leading-relaxed text-lg">
-                معاذ کامران ریڈی میڈ ستور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact & Footer -->
-    <footer id="contact" class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white">معاذ کامران ریڈی میڈ سٹور</h3>
-                <p>ریڈی میڈ کپڑوں کا بہترین آن لائن مرکز۔ ہم ملک بھر میں ڈیلیوری فراہم کرتے ہیں۔</p>
-            </div>
-            <div class="space-y-2">
-                <h3 class="text-xl font-bold text-white">رابطہ کی تفصیلات</h3>
-                <p><i class="fa-solid fa-phone ml-2"></i> 0314-6408155</p>
-                <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
-            </div>
-            <!-- WhatsApp Contact Option in Footer -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white">واٹس ایپ رابطہ</h3>
-                <p>کسی بھی معلومات یا براہِ راست آرڈر کے لیے ہم سے واٹس ایپ پر رابطہ کریں۔</p>
-                <a href="https://wa.me/923146408155" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-2.5 rounded-lg hover:bg-emerald-700 transition font-bold mt-2">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    <span>واٹس ایپ پر چیٹ کریں</span>
-                </a>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
-            &copy; 2026 معاذ کامران ریڈی میڈ سٹور۔ جملہ حقوق محفوظ ہیں۔
-        </div>
-    </footer>
-
-    <!-- Simple E-commerce JS logic with WhatsApp Integration -->
+    <!-- Moving JavaScript to Head for Instant Loading and Bug-Free Swatches -->
     <script>
         let cart = [];
 
@@ -224,7 +36,7 @@
             drawer.classList.toggle('hidden');
         }
 
-        // New Ultra-Stable Color Switcher function using classic concatenation
+        // Ultra-Stable Color Switcher function loaded at the very beginning
         function changeProductColor(productId, imageUrl, colorName, baseName, price) {
             var imgId = 'prod-' + productId + '-img';
             var titleId = 'prod-' + productId + '-title';
@@ -335,3 +147,196 @@
             // Optional: Clear cart after order
             cart = [];
             updateCartUI();
+            toggleCart();
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-emerald-600 flex items-center gap-2">
+                <i class="fa-solid fa-shirt"></i>
+                <span>معاذ کامران ریڈی میڈ سٹور</span>
+            </a>
+            <nav class="hidden md:flex space-x-reverse space-x-6 text-lg">
+                <a href="#" class="hover:text-emerald-600 transition">ہوم</a>
+                <a href="#shop" class="hover:text-emerald-600 transition">مجموعہ (کپڑے)</a>
+                <a href="#about" class="hover:text-emerald-600 transition">ہمارے بارے میں</a>
+                <a href="#contact" class="hover:text-emerald-600 transition">رابطہ کریں</a>
+            </nav>
+            <div class="relative">
+                <button onclick="toggleCart()" class="bg-emerald-600 text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-emerald-700 transition">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count" class="bg-white text-emerald-600 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-emerald-50 to-teal-100 py-16 md:py-24">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 text-center md:text-right">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">جدید اور خوبصورت ریڈی میڈ کپڑے</h1>
+                <p class="text-lg text-gray-600">جدید تراش خراش اور بہترین کپڑے سے تیار کردہ ملبوسات جو آپ کی شخصیت کو چار چاند لگا دیں۔ اب گھر بیٹھے آرڈر کریں۔</p>
+                <div>
+                    <a href="#shop" class="bg-emerald-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-emerald-700 transition inline-block">ابھی خریداری کریں</a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Ready Made Clothes" class="rounded-2xl shadow-2xl max-w-full h-auto object-cover max-h-[400px]">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="shop" class="py-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">ہمارے نئے ڈیزائن</h2>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Product 1 (Ladies Kurti with Multi-color options) -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img id="prod-1-img" src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80" alt="Kurti" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 id="prod-1-title" class="text-lg font-bold">ملٹی کلر لان کرتی</h3>
+                    <p class="text-emerald-600 font-semibold">2,499 روپے</p>
+                    
+                    <!-- Color Swatches -->
+                    <div class="flex gap-2 my-2 justify-center items-center">
+                        <span class="text-xs text-gray-500 self-center">رنگ منتخب کریں:</span>
+                        <!-- Purple Option -->
+                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80', 'جامنی رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-purple-600 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="جامنی"></button>
+                        <!-- Teal Option -->
+                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فیروزی رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-teal-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="فیروزی"></button>
+                        <!-- Yellow Option -->
+                        <button onclick="changeProductColor(1, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا رنگ', 'ملٹی کلر لان کرتی', 2499)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
+                    </div>
+
+                    <button id="prod-1-btn" onclick="addToCart('ملٹی کلر لان کرتی', 2499)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 2 (Fixed: Pure Traditional Sialkot Pakistani Cotton Shalwar Kameez) -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img id="prod-2-img" src="https://images.unsplash.com/photo-1720242203010-30660093718e?auto=format&fit=crop&w=400&q=80" alt="Mens Shalwar Kameez" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 id="prod-2-title" class="text-lg font-bold">مردانہ کاٹن شلوار قمیض</h3>
+                    <p class="text-emerald-600 font-semibold">3,800 روپے</p>
+                    <button id="prod-2-btn" onclick="addToCart('مردانہ کاٹن شلوار قمیض', 3800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 3 (Designer 3-Piece Suit with Multi-color options) -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img id="prod-3-img" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="Casual Wear" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 id="prod-3-title" class="text-lg font-bold">ڈیزائنر تھری پیس سوٹ</h3>
+                    <p class="text-emerald-600 font-semibold">4,500 روپے</p>
+
+                    <!-- Color Swatches -->
+                    <div class="flex gap-2 my-2 justify-center items-center">
+                        <span class="text-xs text-gray-500 self-center">رنگ منتخب کریں:</span>
+                        <!-- Red/Pink Option -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80', 'سرخ گلابی رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-rose-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="سرخ گلابی"></button>
+                        <!-- Teal/Blue Option -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80', 'فیروزی نیلا رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-teal-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="فیروزی نیلا"></button>
+                        <!-- Yellow Option -->
+                        <button onclick="changeProductColor(3, 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80', 'پیلا چمکدار رنگ', 'ڈیزائنر تھری پیس سوٹ', 4500)" class="w-5 h-5 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500" title="پیلا"></button>
+                    </div>
+
+                    <button id="prod-3-btn" onclick="addToCart('ڈیزائنر تھری پیس سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="Western Top" class="h-64 w-full object-cover">
+                <div class="p-4 space-y-2">
+                    <h3 class="text-lg font-bold">جدید ڈیزائنر ٹاپ (Western Style)</h3>
+                    <p class="text-emerald-600 font-semibold">1,999 روپے</p>
+                    <button onclick="addToCart('جدید ڈیزائنر ٹاپ (Western Style)', 1999)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center space-y-6">
+            <h2 class="text-3xl font-bold">ہمارے اسٹور کا ویڈیو تعارف</h2>
+            <p class="text-gray-600">ہمارے شاندار ملبوسات کی کوالٹی اور نئے فیشن ڈیزائنز کو دیکھنے کے لیے یہ ویڈیو پلے کریں۔</p>
+            <div class="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl relative">
+                <!-- YouTube Video Embed (Replace 'tgbNymZ7vqY' with your own YouTube video ID) -->
+                <iframe class="w-full h-[250px] md:h-[450px]" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed/Robust Cart Drawer with Backdrop Overlay -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <!-- Dark Backdrop: Clicking it will close the cart -->
+        <div onclick="toggleCart()" class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+        
+        <!-- Drawer Panel -->
+        <div class="absolute inset-y-0 left-0 max-w-full flex">
+            <div class="w-screen max-w-md bg-white h-full shadow-xl flex flex-col relative z-10">
+                <div class="p-6 bg-emerald-600 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold">آپ کا کارٹ</h3>
+                    <button onclick="toggleCart()" class="text-white hover:text-gray-200">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Dynamic Cart Items Container -->
+                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>
+                </div>
+                
+                <div class="p-6 border-t border-gray-200 space-y-4 bg-gray-50">
+                    <div class="flex justify-between font-bold text-lg">
+                        <span>کل رقم:</span>
+                        <span id="cart-total">0 روپے</span>
+                    </div>
+                    <button onclick="checkout()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 transition">آرڈر مکمل کریں</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4 max-w-3xl text-center space-y-6">
+            <h2 class="text-3xl font-bold">ہمارے بارے میں</h2>
+            <p class="text-gray-600 leading-relaxed text-lg">
+                معاذ کامران ریڈی میڈ ستور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white">معاذ کامران ریڈی میڈ اسٹور</h3>
+                <p>ریڈی میڈ کپڑوں کا بہترین آن لائن مرکز۔ ہم ملک بھر میں ڈیلیوری فراہم کرتے ہیں۔</p>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold text-white">رابطہ کی تفصیلات</h3>
+                <p><i class="fa-solid fa-phone ml-2"></i> 0314-6408155</p>
+                <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
+            </div>
+            <!-- WhatsApp Contact Option in Footer -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white">واٹس ایپ رابطہ</h3>
+                <p>کسی بھی معلومات یا براہِ راست آرڈر کے لیے ہم سے واٹس ایپ پر رابطہ کریں۔</p>
+                <a href="https://wa.me/923146408155" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-2.5 rounded-lg hover:bg-emerald-700 transition font-bold mt-2">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>واٹس ایپ پر چیٹ کریں</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8
