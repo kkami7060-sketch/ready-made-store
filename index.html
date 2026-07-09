@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زیبا پوشاک - ریڈی میڈ کپڑوں کا بہترین اسٹور</title>
+    <title>معاذ کامران ریڈی میڈ سٹور - بہترین ریڈی میڈ ملبوسات</title>
     <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts for Urdu/Arabic styling -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts as backup -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Jameel Noori Nastaleeq CDN link -->
+    <link href="https://cdn.jsdelivr.net/npm/jameel-noori@1.1.2/jameel-noori.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/urdu-fonts@1.5.10/fonts.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Tajawal', 'Noto Naskh Arabic', sans-serif;
+            /* Applying Jameel Noori font with fallback */
+            font-family: 'Jameel-Noori', 'Jameel-Noori.N', 'Noto Nastaliq Urdu', 'Tajawal', sans-serif;
+            line-height: 2; /* Increased line height for Nastaleeq script */
         }
     </style>
 </head>
@@ -23,7 +28,7 @@
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-emerald-600 flex items-center gap-2">
                 <i class="fa-solid fa-shirt"></i>
-                <span>زیبا پوشاک</span>
+                <span>معاذ کامران ریڈی میڈ سٹور</span>
             </a>
             <nav class="hidden md:flex space-x-reverse space-x-6 text-lg">
                 <a href="#" class="hover:text-emerald-600 transition">ہوم</a>
@@ -51,7 +56,6 @@
                 </div>
             </div>
             <div class="flex justify-center">
-                <!-- Placeholder Image representing modern apparel -->
                 <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Ready Made Clothes" class="rounded-2xl shadow-2xl max-w-full h-auto object-cover max-h-[400px]">
             </div>
         </div>
@@ -131,7 +135,7 @@
         <div class="container mx-auto px-4 max-w-3xl text-center space-y-6">
             <h2 class="text-3xl font-bold">ہمارے بارے میں</h2>
             <p class="text-gray-600 leading-relaxed text-lg">
-                زیبا پوشاک پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
+                معاذ کامران ریڈی میڈ سٹور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
             </p>
         </div>
     </section>
@@ -140,14 +144,14 @@
     <footer id="contact" class="bg-gray-900 text-gray-300 py-12">
         <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
             <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white">زیبا پوشاک</h3>
+                <h3 class="text-xl font-bold text-white">معاذ کامران ریڈی میڈ سٹور</h3>
                 <p>ریڈی میڈ کپڑوں کا بہترین آن لائن مرکز۔ ہم ملک بھر میں ڈیلیوری فراہم کرتے ہیں۔</p>
             </div>
             <div class="space-y-2">
                 <h3 class="text-xl font-bold text-white">رابطہ کی تفصیلات</h3>
-                <p><i class="fa-solid fa-phone ml-2"></i> 0300-1234567</p>
-                <p><i class="fa-solid fa-envelope ml-2"></i> info@zebaposhaak.com</p>
-                <p><i class="fa-solid fa-location-dot ml-2"></i> لاہور، پاکستان</p>
+                <p><i class="fa-solid fa-phone ml-2"></i> 0314-6408155</p>
+                <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
             </div>
             <div class="space-y-4">
                 <h3 class="text-xl font-bold text-white">خبرنامہ</h3>
@@ -159,18 +163,17 @@
             </div>
         </div>
         <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
-            &copy; 2026 زیبا پوشاک۔ جملہ حقوق محفوظ ہیں۔
+            &copy; 2026 معاذ کامران ریڈی میڈ سٹور۔ جملہ حقوق محفوظ ہیں۔
         </div>
     </footer>
 
-    <!-- Simple E-commerce JS logic -->
+    <!-- Simple E-commerce JS logic with WhatsApp Integration -->
     <script>
         let cart = [];
 
         function toggleCart() {
             const drawer = document.getElementById('cart-drawer');
             drawer.classList.toggle('translate-x-full');
-            // If the layout direction is RTL, we swap translate direction to feel natural
             if (document.dir === 'rtl') {
                 drawer.classList.toggle('-translate-x-full');
             }
@@ -191,7 +194,6 @@
             const cartCount = document.getElementById('cart-count');
             const cartTotal = document.getElementById('cart-total');
 
-            // Total quantity
             const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
             cartCount.innerText = totalQty;
 
@@ -234,7 +236,33 @@
                 alert('آپ کا کارٹ خالی ہے!');
                 return;
             }
-            alert('شکریہ! آپ کا آرڈر درج کر لیا گیا ہے۔ (یہ ایک ڈیمو آرڈر ہے)');
+
+            // WhatsApp Message Formatting
+            let message = `*معاذ کامران ریڈی میڈ سٹور*\n`;
+            message += `--------------------------------------\n`;
+            message += `السلام علیکم! میں درج ذیل کپڑوں کا آرڈر دینا چاہتا ہوں:\n\n`;
+            
+            let total = 0;
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                message += `*${index + 1}. ${item.name}*\n   قیمت: ${item.price.toLocaleString()} روپے | تعداد: ${item.qty} | کل: ${itemTotal.toLocaleString()} روپے\n\n`;
+            });
+            
+            message += `--------------------------------------\n`;
+            message += `*کل رقم (Grand Total):* ${total.toLocaleString()} روپے\n\n`;
+            message += `مہربانی فرما کر میرا آرڈر کنفرم کریں اور ادائیگی کا طریقہ کار اور ڈیلیوری کی تفصیلات شیئر کریں۔ شکریہ!`;
+
+            // Encoding the message to be URL friendly
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Sending to WhatsApp API with country code (92 for Pakistan)
+            const whatsappUrl = `https://wa.me/923146408155?text=${encodedMessage}`;
+            
+            // Open in new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Optional: Clear cart after order
             cart = [];
             updateCartUI();
             toggleCart();
