@@ -108,24 +108,33 @@
         </div>
     </section>
 
-    <!-- Cart Drawer (Modal) -->
-    <div id="cart-drawer" class="fixed inset-y-0 left-0 max-w-full flex pl-10 z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
-        <div class="w-screen max-w-md bg-white shadow-xl flex flex-col">
-            <div class="p-6 bg-emerald-600 text-white flex justify-between items-center">
-                <h3 class="text-lg font-bold">آپ کا کارٹ</h3>
-                <button onclick="toggleCart()" class="text-white hover:text-gray-200">
-                    <i class="fa-solid fa-xmark text-2xl"></i>
-                </button>
-            </div>
-            <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
-                <p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>
-            </div>
-            <div class="p-6 border-t border-gray-200 space-y-4 bg-gray-50">
-                <div class="flex justify-between font-bold text-lg">
-                    <span>کل رقم:</span>
-                    <span id="cart-total">0 روپے</span>
+    <!-- Fixed/Robust Cart Drawer with Backdrop Overlay -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <!-- Dark Backdrop: Clicking it will close the cart -->
+        <div onclick="toggleCart()" class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+        
+        <!-- Drawer Panel -->
+        <div class="absolute inset-y-0 left-0 max-w-full flex">
+            <div class="w-screen max-w-md bg-white h-full shadow-xl flex flex-col relative z-10">
+                <div class="p-6 bg-emerald-600 text-white flex justify-between items-center">
+                    <h3 class="text-lg font-bold">آپ کا کارٹ</h3>
+                    <button onclick="toggleCart()" class="text-white hover:text-gray-200">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
                 </div>
-                <button onclick="checkout()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 transition">آرڈر مکمل کریں</button>
+                
+                <!-- Dynamic Cart Items Container -->
+                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>
+                </div>
+                
+                <div class="p-6 border-t border-gray-200 space-y-4 bg-gray-50">
+                    <div class="flex justify-between font-bold text-lg">
+                        <span>کل رقم:</span>
+                        <span id="cart-total">0 روپے</span>
+                    </div>
+                    <button onclick="checkout()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 transition">آرڈر مکمل کریں</button>
+                </div>
             </div>
         </div>
     </div>
@@ -153,7 +162,7 @@
                 <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
                 <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
             </div>
-            <!-- Replaced Newsletter with WhatsApp Contact Option -->
+            <!-- WhatsApp Contact Option in Footer -->
             <div class="space-y-4">
                 <h3 class="text-xl font-bold text-white">واٹس ایپ رابطہ</h3>
                 <p>کسی بھی معلومات یا براہِ راست آرڈر کے لیے ہم سے واٹس ایپ پر رابطہ کریں۔</p>
@@ -172,12 +181,10 @@
     <script>
         let cart = [];
 
+        // Simplified and completely robust show/hide toggle for cart drawer
         function toggleCart() {
             const drawer = document.getElementById('cart-drawer');
-            drawer.classList.toggle('translate-x-full');
-            if (document.dir === 'rtl') {
-                drawer.classList.toggle('-translate-x-full');
-            }
+            drawer.classList.toggle('hidden');
         }
 
         function addToCart(name, price) {
@@ -188,6 +195,10 @@
                 cart.push({ name, price, qty: 1 });
             }
             updateCartUI();
+            
+            // Automatically open cart when item is added to provide feedback
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.remove('hidden');
         }
 
         function updateCartUI() {
@@ -213,10 +224,10 @@
                     <div class="flex justify-between items-center border-b pb-3">
                         <div>
                             <h4 class="font-bold text-sm">${item.name}</h4>
-                            <p class="text-xs text-gray-500">${item.price} روپے x ${item.qty}</p>
+                            <p class="text-xs text-gray-500">${item.price.toLocaleString()} روپے x ${item.qty}</p>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="font-semibold text-sm">${itemTotal} روپے</span>
+                            <span class="font-semibold text-sm">${itemTotal.toLocaleString()} روپے</span>
                             <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-xs font-bold">حذف کریں</button>
                         </div>
                     </div>
