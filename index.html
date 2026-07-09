@@ -20,22 +20,21 @@
     
     <style>
         body {
-            /* Applying Jameel Noori font with fallback --> You can change Jameel-Noori to any other font if desired */
             font-family: 'Jameel-Noori', 'Jameel-Noori.N', 'Noto Nastaliq Urdu', 'Tajawal', sans-serif;
             line-height: 2; 
         }
     </style>
 
-    <!-- JavaScript for Slider & Cart Control -->
+    <!-- Ultra-Stable Classic JavaScript (No ES6 Arrow Functions to ensure 100% stability) -->
     <script>
-        let cart = [];
-        let currentSlide = 0;
-        const totalSlides = 3;
+        var cart = [];
+        var currentSlide = 0;
+        var totalSlides = 3;
 
         // Auto Slider functions
         function showSlide(index) {
-            for (let i = 0; i < totalSlides; i++) {
-                const slide = document.getElementById('slide-' + i);
+            for (var i = 0; i < totalSlides; i++) {
+                var slide = document.getElementById('slide-' + i);
                 if (slide) {
                     if (i === index) {
                         slide.classList.remove('opacity-0');
@@ -53,7 +52,7 @@
             showSlide(currentSlide);
         }
 
-        // Initialize features after page load
+        // Initialize features safely after DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             setInterval(function() {
                 changeSlide(1);
@@ -62,57 +61,80 @@
 
         // Robust show/hide toggle for cart drawer
         function toggleCart() {
-            const drawer = document.getElementById('cart-drawer');
-            drawer.classList.toggle('hidden');
-        }
-
-        function addToCart(name, price) {
-            const existingItem = cart.find(item => item.name === name);
-            if (existingItem) {
-                existingItem.qty += 1;
-            } else {
-                cart.push({ name, price, qty: 1 });
+            var drawer = document.getElementById('cart-drawer');
+            if (drawer) {
+                drawer.classList.toggle('hidden');
             }
-            updateCartUI();
-            const drawer = document.getElementById('cart-drawer');
-            drawer.classList.remove('hidden');
         }
 
-        // Updating shopping cart view
+        // Extremely robust Add to Cart function using standard loops
+        function addToCart(name, price) {
+            var found = false;
+            for (var i = 0; i < cart.length; i++) {
+                if (cart[i].name === name) {
+                    cart[i].qty += 1;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                cart.push({ name: name, price: price, qty: 1 });
+            }
+            
+            updateCartUI();
+            
+            // Automatically open cart when item is added
+            var drawer = document.getElementById('cart-drawer');
+            if (drawer) {
+                drawer.classList.remove('hidden');
+            }
+        }
+
+        // Stable Cart UI updates
         function updateCartUI() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartCount = document.getElementById('cart-count');
-            const cartTotal = document.getElementById('cart-total');
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            cartCount.innerText = totalQty;
+            var cartItemsContainer = document.getElementById('cart-items');
+            var cartCount = document.getElementById('cart-count');
+            var cartTotal = document.getElementById('cart-total');
+
+            var totalQty = 0;
+            var grandTotal = 0;
+            for (var i = 0; i < cart.length; i++) {
+                totalQty += cart[i].qty;
+                grandTotal += (cart[i].price * cart[i].qty);
+            }
+
+            if (cartCount) {
+                cartCount.innerText = totalQty;
+            }
+
+            if (!cartItemsContainer) return;
 
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>';
-                cartTotal.innerText = '0 روپے';
+                if (cartTotal) cartTotal.innerText = '0 روپے';
                 return;
             }
 
-            let html = '';
-            let total = 0;
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.qty;
-                total += itemTotal;
-                html += `
-                    <div class="flex justify-between items-center border-b pb-3">
-                        <div>
-                            <h4 class="font-bold text-sm">${item.name}</h4>
-                            <p class="text-xs text-gray-500">${item.price.toLocaleString()} روپے x ${item.qty}</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="font-semibold text-sm">${itemTotal.toLocaleString()} روپے</span>
-                            <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-xs font-bold">حذف کریں</button>
-                        </div>
-                    </div>
-                `;
-            });
+            var html = '';
+            for (var j = 0; j < cart.length; j++) {
+                var item = cart[j];
+                var itemTotal = item.price * item.qty;
+                html += '<div class="flex justify-between items-center border-b pb-3">' +
+                            '<div>' +
+                                '<h4 class="font-bold text-sm">' + item.name + '</h4>' +
+                                '<p class="text-xs text-gray-500">' + item.price.toLocaleString() + ' روپے x ' + item.qty + '</p>' +
+                            '</div>' +
+                            '<div class="flex items-center gap-2">' +
+                                '<span class="font-semibold text-sm">' + itemTotal.toLocaleString() + ' روپے</span>' +
+                                '<button onclick="removeFromCart(' + j + ')" class="text-red-500 hover:text-red-700 text-xs font-bold">حذف کریں</button>' +
+                            '</div>' +
+                        '</div>';
+            }
 
             cartItemsContainer.innerHTML = html;
-            cartTotal.innerText = total.toLocaleString() + ' روپے';
+            if (cartTotal) {
+                cartTotal.innerText = grandTotal.toLocaleString() + ' روپے';
+            }
         }
 
         function removeFromCart(index) {
@@ -127,23 +149,24 @@
             }
 
             // WhatsApp Message Formatting
-            let message = *معاذ کامران ریڈی میڈ اسٹور*\n;
-            message += --------------------------------------\n;
-            message += السلام علیکم! میں درج ذیل کپڑوں کا آرڈر دینا چاہتا ہوں:\n\n;
+            var message = 'معاذ کامران ریڈی میڈ اسٹور\n';
+            message += '--------------------------------------\n';
+            message += 'السلام علیکم! میں درج ذیل کپڑوں کا آرڈر دینا چاہتا ہوں:\n\n';
             
-            let total = 0;
-            cart.forEach((item, index) => {
-                const itemTotal = item.price * item.qty;
+            var total = 0;
+            for (var i = 0; i < cart.length; i++) {
+                var item = cart[i];
+                var itemTotal = item.price * item.qty;
                 total += itemTotal;
-                message += *${index + 1}. ${item.name}*\n   قیمت: ${item.price.toLocaleString()} روپے | تعداد: ${item.qty} | کل: ${itemTotal.toLocaleString()} روپے\n\n;
-            });
+                message += '' + (i + 1) + '. ' + item.name + '\n   قیمت: ' + item.price.toLocaleString() + ' روپے | تعداد: ' + item.qty + ' | کل: ' + itemTotal.toLocaleString() + ' روپے\n\n';
+            }
             
-            message += --------------------------------------\n;
-            message += *کل رقم (Grand Total):* ${total.toLocaleString()} روپے\n\n;
-            message += مہربانی فرما کر میرا آرڈر کنفرم کریں اور ادائیگی کا طریقہ کار اور ڈیلیوری کی تفصیلات شیئر کریں۔ شکریہ!;
+            message += '--------------------------------------\n';
+            message += 'کل رقم (Grand Total): ' + total.toLocaleString() + ' روپے\n\n';
+            message += 'مہربانی فرما کر میرا آرڈر کنفرم کریں اور ادائیگی کا طریقہ کار اور ڈیلیوری کی تفصیلات شیئر کریں۔ شکریہ!';
 
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = https://wa.me/923146408155?text=${encodedMessage};
+            var encodedMessage = encodeURIComponent(message);
+            var whatsappUrl = 'https://wa.me/923146408155?text=' + encodedMessage;
             window.open(whatsappUrl, '_blank');
             cart = [];
             updateCartUI();
@@ -162,7 +185,7 @@
             </a>
             <nav class="hidden md:flex space-x-reverse space-x-6 text-lg">
                 <a href="#" class="hover:text-emerald-600 transition">ہوم</a>
-                <a href="#shop" class="hover:text-emerald-600 transition">کولیکشن (کپڑے)</a>
+                <a href="#shop" class="hover:text-emerald-600 transition">مجموعہ (کپڑے)</a>
                 <a href="#about" class="hover:text-emerald-600 transition">ہمارے بارے میں</a>
                 <a href="#contact" class="hover:text-emerald-600 transition">رابطہ کریں</a>
             </nav>
@@ -175,7 +198,7 @@
         </div>
     </header>
 
-    <!-- Beautiful Auto Image Slider (Using your custom uploaded photos!) -->
+    <!-- Beautiful Auto Image Slider (Using your custom amazing images) -->
     <section class="relative h-[300px] md:h-[550px] bg-gray-900 overflow-hidden shadow-lg">
         <!-- Slide 1 -->
         <img id="slide-0" src="mens-white.jpg.jpeg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
@@ -193,7 +216,7 @@
                 <h1 class="text-3xl md:text-5xl font-bold leading-tight">معاذ کامران ریڈی میڈ اسٹور</h1>
                 <p class="text-sm md:text-lg">جدید ڈیزائن اور بہترین کوالٹی کے کپڑے سے تیار کردہ ملبوسات جو آپ کی شخصیت کو چار چاند لگا دیں۔ اب گھر بیٹھے آرڈر کریں۔</p>
                 <div>
-                    <a href="#shop" class="bg-emerald-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold hover:bg-emerald-700 transition inline-block">کولیکشن دیکھیں</a>
+                    <a href="#shop" class="bg-emerald-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold hover:bg-emerald-700 transition inline-block">مجموعہ دیکھیں</a>
                 </div>
             </div>
         </div>
