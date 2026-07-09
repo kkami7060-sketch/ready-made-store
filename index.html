@@ -29,8 +29,12 @@
     <!-- JavaScript Loaded in Head for Slider & Cart Stability -->
     <script>
         let cart = [];
-        let currentSlide = 0;
-        const totalSlides = 3;
+
+        // Simplified and completely robust show/hide toggle for cart drawer
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
 
         // Auto Slider functions (using your custom uploaded photos!)
         function showSlide(index) {
@@ -185,13 +189,13 @@
     <!-- Beautiful Auto Image Slider (Using your custom amazing images) -->
     <section class="relative h-[300px] md:h-[550px] bg-gray-900 overflow-hidden shadow-lg">
         <!-- Slide 1 (Your Premium Menswear) -->
-        <img id="slide-0" src="mens-white.jpg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
+        <img id="slide-0" src="mens-white.jpg.jpeg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
         
         <!-- Slide 2 (Your Green Ladies Suit) -->
-        <img id="slide-1" src="ladies-green.jpg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+        <img id="slide-1" src="ladies-green.jpg.jpeg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
         
         <!-- Slide 3 (Your Peach Ladies Suit) -->
-        <img id="slide-2" src="ladies-peach.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+        <img id="slide-2" src="ladies-peach.jpg.jpeg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
 
         <!-- Elegant Dark Overlay for text visibility -->
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -200,7 +204,7 @@
         <div class="absolute inset-0 flex items-center justify-center text-center p-4">
             <div class="max-w-2xl text-white space-y-4">
                 <h1 class="text-3xl md:text-5xl font-bold leading-tight">معاذ کامران ریڈی میڈ ستور</h1>
-                <p class="text-sm md:text-lg">جدید تراش خراش اور بہترین کپڑے سے تیار کردہ ملبوسات جو آپ کی شخصیت کو چار چاند لگا دیں۔ اب گھر بیٹھے آرڈر کریں۔</p>
+                <p class="text-sm md:text-lg">جدید ڈیزائن اور بہترین کوالٹی کے کپڑے سے تیار کردہ ملبوسات جو آپ کی شخصیت کو چار چاند لگا دیں۔ اب گھر بیٹھے آرڈر کریں۔</p>
                 <div>
                     <a href="#shop" class="bg-emerald-600 text-white px-6 py-2 md:px-8 md:py-3 rounded-lg text-sm md:text-lg font-semibold hover:bg-emerald-700 transition inline-block">مجموعہ دیکھیں</a>
                 </div>
@@ -211,127 +215,4 @@
         <button onclick="changeSlide(-1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white w-8 h-10 rounded flex items-center justify-center z-10 transition">
             <i class="fa-solid fa-chevron-right text-lg"></i>
         </button>
-        <button onclick="changeSlide(1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white w-8 h-10 rounded flex items-center justify-center z-10 transition">
-            <i class="fa-solid fa-chevron-left text-lg"></i>
-        </button>
-    </section>
-
-    <!-- Product Section -->
-    <section id="shop" class="py-16 container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">ہمارے نئے ڈیزائن</h2>
-        
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <!-- Product 1 (Ladies Green Suit - Your Photo!) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="ladies-green.jpg" alt="Ladies Green Suit" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">ڈیزائنر تھری پیس سبز سوٹ</h3>
-                    <p class="text-emerald-600 font-semibold">4,500 روپے</p>
-                    <button onclick="addToCart('ڈیزائنر تھری پیس سبز سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-
-            <!-- Product 2 (Mens White Suit with Waistcoat - Your Photo!) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="mens-white.jpg" alt="Mens White Suit" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">مردانہ روایتی سوٹ مع واسکوٹ</h3>
-                    <p class="text-emerald-600 font-semibold">4,800 روپے</p>
-                    <button onclick="addToCart('مردانہ روایتی سوٹ مع واسکوٹ', 4800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-
-            <!-- Product 3 (Ladies Peach Suit - Your Photo!) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="ladies-peach.jpg" alt="Ladies Peach Suit" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">پریمیم کڑھائی والا آڑو سوٹ</h3>
-                    <p class="text-emerald-600 font-semibold">4,500 روپے</p>
-                    <button onclick="addToCart('پریمیم کڑھائی والا آڑو سوٹ', 4500)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-
-            <!-- Product 4 (Mens Grey Shalwar Kameez - Your Photo!) -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between">
-                <img src="mens-grey.jpg" alt="Mens Grey Kurta" class="h-64 w-full object-cover">
-                <div class="p-4 space-y-2">
-                    <h3 class="text-lg font-bold">مردانہ کاٹن سرمئی شلوار قمیض</h3>
-                    <p class="text-emerald-600 font-semibold">3,800 روپے</p>
-                    <button onclick="addToCart('مردانہ کاٹن سرمئی شلوار قمیض', 3800)" class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition">کارٹ میں شامل کریں</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fixed/Robust Cart Drawer with Backdrop Overlay -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
-        <!-- Dark Backdrop: Clicking it will close the cart -->
-        <div onclick="toggleCart()" class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
-        
-        <!-- Drawer Panel -->
-        <div class="absolute inset-y-0 left-0 max-w-full flex">
-            <div class="w-screen max-w-md bg-white h-full shadow-xl flex flex-col relative z-10">
-                <div class="p-6 bg-emerald-600 text-white flex justify-between items-center">
-                    <h3 class="text-lg font-bold">آپ کا کارٹ</h3>
-                    <button onclick="toggleCart()" class="text-white hover:text-gray-200">
-                        <i class="fa-solid fa-xmark text-2xl"></i>
-                    </button>
-                </div>
-                
-                <!-- Dynamic Cart Items Container -->
-                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
-                    <p class="text-gray-500 text-center py-8">کارٹ خالی ہے</p>
-                </div>
-                
-                <div class="p-6 border-t border-gray-200 space-y-4 bg-gray-50">
-                    <div class="flex justify-between font-bold text-lg">
-                        <span>کل رقم:</span>
-                        <span id="cart-total">0 روپے</span>
-                    </div>
-                    <button onclick="checkout()" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700 transition">آرڈر مکمل کریں</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="bg-gray-100 py-16">
-        <div class="container mx-auto px-4 max-w-3xl text-center space-y-6">
-            <h2 class="text-3xl font-bold">ہمارے بارے میں</h2>
-            <p class="text-gray-600 leading-relaxed text-lg">
-                معاذ کامران ریڈی میڈ ستور پر ہمارا عزم ہے کہ ہم آپ کو بہترین معیار کے کپڑے مناسب قیمتوں پر فراہم کریں۔ ہمارے تمام ملبوسات فیشن کے جدید تقاضوں کے مطابق تیار کیے جاتے ہیں تاکہ آپ ہر تقریب میں منفرد اور پر اعتماد نظر آئیں۔
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact & Footer -->
-    <footer id="contact" class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white">معاذ کامران ریڈی میڈ اسٹور</h3>
-                <p>ریڈی میڈ کپڑوں کا بہترین آن لائن مرکز۔ ہم ملک بھر میں ڈیلیوری فراہم کرتے ہیں۔</p>
-            </div>
-            <div class="space-y-2">
-                <h3 class="text-xl font-bold text-white">رابطہ کی تفصیلات</h3>
-                <p><i class="fa-solid fa-phone ml-2"></i> 0314-6408155</p>
-                <p><i class="fa-solid fa-envelope ml-2"></i> kkami7060@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot ml-2"></i> پاکستان</p>
-            </div>
-            <!-- WhatsApp Contact Option in Footer -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white">واٹس ایپ رابطہ</h3>
-                <p>کسی بھی معلومات یا براہِ راست آرڈر کے لیے ہم سے واٹس ایپ پر رابطہ کریں۔</p>
-                <a href="https://wa.me/923146408155" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-5 py-2.5 rounded-lg hover:bg-emerald-700 transition font-bold mt-2">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    <span>واٹس ایپ پر چیٹ کریں</span>
-                </a>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
-            &copy; 2026 معاذ کامران ریڈی میڈ اسٹور۔ جملہ حقوق محفوظ ہیں۔
-        </div>
-    </footer>
-
-</body>
-</html>
+        <button onclick="changeSlide(1)" class="absolute left-4 top-1/2
